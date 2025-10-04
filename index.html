@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokémon Database</title>
+    <meta name="description" content="Simple Pokémon database with search and filters">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Pokémon Database</h1>
+        <p class="tagline">Search and filter a mini Pokédex</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <label class="sr-only" for="search">Search Pokémon</label>
+        <input id="search" class="search-input" type="search" placeholder="Search by name or #ID..." autocomplete="off">
+
+        <label for="typeFilter" class="type-label">Type:</label>
+        <select id="typeFilter" class="type-select">
+          <option value="">All</option>
+          <option>Normal</option>
+          <option>Fire</option>
+          <option>Water</option>
+          <option>Electric</option>
+          <option>Grass</option>
+          <option>Ice</option>
+          <option>Fighting</option>
+          <option>Poison</option>
+          <option>Ground</option>
+          <option>Flying</option>
+          <option>Psychic</option>
+          <option>Bug</option>
+          <option>Rock</option>
+          <option>Ghost</option>
+          <option>Dragon</option>
+          <option>Steel</option>
+          <option>Fairy</option>
+        </select>
+      </section>
+
+      <div id="status" aria-live="polite" class="status" style="padding:8px 0;color:#9aa3b2"></div>
+
+      <section id="results" class="grid" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Data sample uses images from <a href="https://pokeapi.co/" target="_blank" rel="noreferrer noopener">PokéAPI</a>.</small>
+      </div>
+    </footer>
+
+    <!-- Pokémon Details Modal -->
+    <div id="pokemonModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <img id="modalSprite" class="modal-sprite" src="" alt="">
+          <div class="modal-info">
+            <h2 id="modalName"></h2>
+            <div id="modalId" class="modal-id"></div>
+            <div id="modalTypes" class="modal-types"></div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-section">
+            <h3>Evolution Info</h3>
+            <div id="modalEvolution" class="evolution-info"></div>
+          </div>
+          <div class="modal-section">
+            <h3>Moves</h3>
+            <div id="modalMoves" class="moves-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
